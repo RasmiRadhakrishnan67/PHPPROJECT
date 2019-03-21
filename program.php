@@ -9,9 +9,21 @@ $resultObj = $connection->query($query);
 <!DOCTYPE html>
 <html>
     <head>
+    <style>
+    #content-body{
+        margin:20px;
+        background-color:#FCF3CF  ;
+    }
+    #header{
+        margin:20px;  
+    }
+    </style>
     </head>
     <body>
-        <div id="Body">
+    <div id="header">
+    <img src="logo.jpg" width="100%" height="250px">
+    </div>
+        <div id="content-body">
             <form method="POST" action="final.php">
                 <div>
                     <table>
@@ -34,23 +46,17 @@ $resultObj = $connection->query($query);
             
                             </td>
                             <td>
-                            <img src="<?=$row['IMAGE']?>" height='50px' width='50px'>
+                            <img src="<?=$row['IMAGE']?>" height='50px' width='80px'>
                             </td>
                             <td>
                             <input type="number" value="<?=$row['PRICE']?>" name="price" readonly="true">             
                             </td>
-                            <td>
-                                <select name="quantity">
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                </select>
-                            </td>
+                            
                     
                             <td>
-                            <? $i=10?>
-                            <button name='submit' value='<?=$row['PRODUCT_ID']?>'>Add to cart</button>
-                            <? $i=$i+1?>
+                          
+                            <button name='submit' value='<?=$row['PRODUCT_ID']?>'>+1</button>
+                           
                             </td>
                             </tr>
                         <?php endWhile; ?>
