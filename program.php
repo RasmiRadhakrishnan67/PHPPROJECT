@@ -17,6 +17,7 @@ $resultObj = $connection->query($query);
     #header{
         margin:20px;  
     }
+    
     </style>
     </head>
     <body>
@@ -24,7 +25,8 @@ $resultObj = $connection->query($query);
     <img src="logo.jpg" width="100%" height="250px">
     </div>
         <div id="content-body">
-            <form method="POST" action="final.php">
+       
+       
                 <div>
                     <table>
                    
@@ -38,24 +40,24 @@ $resultObj = $connection->query($query);
 
                         <tr>
                         <?php while($row = $resultObj->fetch_assoc()): ?>
-                            <td>
+                            <td align="center">
                             <?=$row['PRODUCT_ID']?>
                             </td>
-                            <td>
+                            <td align="center">
                             <input type="text" value="<?=$row['PRODUCT_NAME']?>" name="prod_name" readonly="true"> 
             
                             </td>
-                            <td>
+                            <td align="center">
                             <img src="<?=$row['IMAGE']?>" height='50px' width='80px'>
                             </td>
-                            <td>
+                            <td align="center">
                             <input type="number" value="<?=$row['PRICE']?>" name="price" readonly="true">             
                             </td>
                             
                     
-                            <td>
+                            <td align="center">
                           
-                            <button name='submit' value='<?=$row['PRODUCT_ID']?>'>+1</button>
+                            <button name='submit' value='<?=$row['PRODUCT_ID']?>'>+1 </button>
                            
                             </td>
                             </tr>

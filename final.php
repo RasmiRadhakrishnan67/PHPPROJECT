@@ -32,6 +32,9 @@ $resultObj4 = $connection->query($query5);
     #table-body{
         margin:20px;
     }
+    table{
+       border:1px solid black;
+    }
     </style>
     </head>
     <body>
